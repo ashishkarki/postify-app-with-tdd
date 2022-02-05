@@ -6,3 +6,5 @@ export const REACT_APP_PATH_NAMES = {
   POSTS: '/posts',
   POST: '/posts/:id',
 }
+
+export const REACT_APP_BASE_URI = '/api/v1/users'

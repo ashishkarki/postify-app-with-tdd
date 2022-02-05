@@ -1,28 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const Login: React.FC = () => {
   const [loginState, setLoginState] = useState({
-    email: '',
-    password: '',
-  })
+    email: "",
+    password: "",
+  });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target
-    console.log(`${name}: ${value}`)
+    const { name, value } = event.target;
+    console.log(`Login => handleChange => ${name}: ${value}`);
 
-    setLoginState({ ...loginState, [name]: value })
-  }
+    setLoginState({ ...loginState, [name]: value });
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    console.log(`Login => login state: ${JSON.stringify(loginState)}`)
-  }
+    event.preventDefault();
+    console.log(`Login => handleSubmit: ${JSON.stringify(loginState)}`);
+  };
 
   return (
     <div
       style={{
-        margin: '2rem auto',
-        maxWidth: '500px',
+        margin: "2rem auto",
+        maxWidth: "500px",
       }}
     >
       <h2>Login using email and password</h2>
@@ -30,11 +30,11 @@ const Login: React.FC = () => {
       <form
         onSubmit={handleSubmit}
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          height: '40vh',
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          alignItems: "center",
+          height: "40vh",
         }}
       >
         <div className="form-group">
@@ -62,11 +62,11 @@ const Login: React.FC = () => {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          Submit
+          Login
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

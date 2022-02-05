@@ -2,7 +2,7 @@
   "name": "postify-webservice",
   "version": "1.0.0",
   "description": "posts app with tdd practice using express",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon",
     "test": "jest --coverage --watch",
@@ -19,18 +19,29 @@
   "author": "ashish karki",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.2"
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "http-status-codes": "^2.2.0",
+    "sequelize": "^6.15.0",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.7",
     "prettier": "^2.5.1",
     "supertest": "^6.2.2"
   },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "postify-web"
+    ]
+  },
   "eslintConfig": {
     "parserOptions": {
-      "ecmaVersion": 6
+      "ecmaVersion": 2018
     },
     "extends": [
       "eslint:recommended",
@@ -47,7 +58,7 @@
     "rules": {
       "eqeqeq": "warn",
       "prettier/prettier": [
-        "warn",
+        "ignore",
         {
           "semi": false,
           "singleQuote": true
@@ -56,6 +67,11 @@
     }
   },
   "prettier": {
-    "printWidth": 120
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "semi": false
   }
 }
